@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/css/dashboard.css" />
+</head>
+
+<body>
+
+  <div id="container">
+    <header class="navbar">
+      <h1>EvoBoard</h1>
+      <a href="#"><img src="./assets/img/user.svg" alt="User Image"></a>
+    </header>
+    <div class="content-box">
+      <div class="sidebar">
+        <div class="sidebar-menu">
+          <ul>
+            <li><a href="#"><img src="./assets/img/settings.svg" alt="Icon Menu">Dashboard</a></li>
+            <li><a href="#"><img src="./assets/img/settings.svg" alt="Icon Menu">Clientes</a></li>
+            <li><a href="#"><img src="./assets/img/settings.svg" alt="Icon Menu">Time</a></li>
+            <li><a href=""><img src="./assets/img/settings.svg" alt="Icon Menu">Produtos</a></li>
+            <li><a href=""><img src="./assets/img/settings.svg" alt="Icon Menu">Configurações</a></li>
+          </ul>
+        </div>
+        <div class="user-wrapper">
+          <a href="#"><img src="./assets/img/turn-off.svg" alt="LogOut">
+            <p>Log out</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="content">
+        <header>
+          <h3>Clientes</h3>
+          <a href="#" onClick="Modal()" class="button new">+ Cadastrar</a>
+        </header>
+
+        <main>
+          <section class="clients">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Empresa</th>
+                  <th>Telefone</th>
+                  <th>Cadastro</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Lucas
+                  </td>
+                  <td>
+                    lucaslomeugomes@gmail.com
+                  </td>
+                  <td>
+                    EvoCell
+                  </td>
+                  <td>
+                    (33)999321998
+                  </td>
+                  <td>
+                    01/01/2021
+                  </td>
+                  <td class="removeBtn"><img src="./assets/img/remove.svg" alt=""></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+      </section>
+    </div>
+  </div>
+
+</body>
+
+</html>
