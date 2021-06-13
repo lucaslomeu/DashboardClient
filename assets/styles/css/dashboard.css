@@ -93,12 +93,22 @@
   margin: 1.5rem 1rem 0.5rem;
   font-size: 1rem;
 }
-#container .content-box .content header a {
+#container .content-box .content header .header-client input {
+  height: 30px;
+  padding-left: 10px;
+  border-radius: 0.2rem;
+  border: 1px solid var(--white-secondary);
+  outline: none;
+}
+#container .content-box .content header .header-client input:hover, #container .content-box .content header .header-client input:active, #container .content-box .content header .header-client input:focus {
+  border-color: var(--primary-color);
+}
+#container .content-box .content header .header-client a {
   padding: 0.4rem;
   color: var(--secondary-color);
   font-weight: bold;
 }
-#container .content-box .content header a:hover {
+#container .content-box .content header .header-client a:hover {
   color: var(--primary-color);
 }
 #container .content-box .content main {
@@ -118,7 +128,7 @@
 #container .content-box .content main section.clients .data-table thead th {
   background-color: var(--white-secondary);
   font-weight: normal;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   text-align: left;
   font-weight: bold;
 }
@@ -136,9 +146,10 @@
   background-color: var(--primary-color);
 }
 #container .content-box .content main section.clients .data-table tbody td {
-  padding: 0.4rem 2rem;
+  padding: 0.4rem 1rem;
   font-weight: normal;
   cursor: default;
+  font-size: 0.9rem;
 }
 #container .content-box .content main section.clients .data-table tbody td:first-child {
   border-radius: 0.25rem 0 0 0.25rem;
@@ -150,6 +161,85 @@
 #container .content-box .content main section.clients .data-table tbody td.removeBtn img {
   width: 30px;
   cursor: pointer;
+}
+#container .modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+#container .modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+#container .modal-overlay .modal {
+  background-color: var(--white-primary);
+  border-radius: 0.5rem;
+  padding: 2.4rem;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+}
+#container .modal-overlay .modal .form {
+  max-width: 500px;
+}
+#container .modal-overlay .modal .form h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+#container .modal-overlay .modal .form input {
+  border: 1px solid var(--white-secondary);
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
+  outline: none;
+  color: var(--text-color);
+}
+#container .modal-overlay .modal .form input:hover, #container .modal-overlay .modal .form input:active, #container .modal-overlay .modal .form input:focus {
+  border: 1px solid var(--primary-color);
+}
+#container .modal-overlay .modal .form .input-group {
+  margin-top: 0.8rem;
+}
+#container .modal-overlay .modal .form .input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+#container .modal-overlay .modal .form .input-group.actions.actions .button, #container .modal-overlay .modal .form .input-group.actions.actions button {
+  width: 48%;
+}
+#container .modal-overlay .modal .form .input-group.actions .button.cancel {
+  color: red;
+  border: 2px solid red;
+  border-radius: 0.25rem;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+}
+#container .modal-overlay .modal .form .input-group.actions button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  color: #fff;
+  background-color: green;
+  padding: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+#container .modal-overlay .modal .form .input-group .help {
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=dashboard.css.map */

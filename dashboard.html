@@ -5,9 +5,11 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Dashboard Client</title>
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/assets/styles/css/dashboard.css" />
 </head>
 
@@ -39,9 +41,11 @@
       <div class="content">
         <header>
           <h3>Clientes</h3>
-          <a href="#" onClick="Modal()" class="button new">+ Cadastrar</a>
+          <div class="header-client">
+            <input type="search" name="" id="" placeholder="Procurar">
+            <a href="#" onClick="Modal()" class="button new">+ Cadastrar</a>
+          </div>
         </header>
-
         <main>
           <section class="clients">
             <table class="data-table">
@@ -52,37 +56,58 @@
                   <th>Empresa</th>
                   <th>Telefone</th>
                   <th>Cadastro</th>
-                  <th></th>
+                  <th> </th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    Lucas
-                  </td>
-                  <td>
-                    lucaslomeugomes@gmail.com
-                  </td>
-                  <td>
-                    EvoCell
-                  </td>
-                  <td>
-                    (33)999321998
-                  </td>
-                  <td>
-                    01/01/2021
-                  </td>
-                  <td class="removeBtn"><img src="./assets/img/remove.svg" alt=""></td>
-                </tr>
-              </tbody>
+              <tbody></tbody>
             </table>
           </section>
         </main>
       </div>
       </section>
     </div>
+    <div class="modal-overlay">
+      <div class="modal">
+        <div class="form">
+          <h2>Novo Cliente</h2>
+          <form action="" onSubmit="Form.submit(event)">
+
+            <div class="input-group">
+              <label class="sr-only" for="name">Nome</label>
+              <input type="text" id="name" name="name" placeholder="Nome" />
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Email" />
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="enterprise">Empresa</label>
+              <input type="text" id="enterprise" name="enterprise" placeholder="Empresa" />
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="phone">Telefone</label>
+              <input type="tel" id="phone" name="phone" placeholder="Telefone" />
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="date">Data</label>
+              <input type="date" id="date" name="date" />
+            </div>
+
+            <div class="input-group actions">
+              <a href="#" onClick="Modal()" class="button cancel">Cancelar</a>
+              <button>Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
