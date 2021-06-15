@@ -1,7 +1,125 @@
 @import url('../css/reset.css');
 
-#container {
+// CONTAINER LOGIN
+#login {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: var(--white-secondary);
+
+  #login-form {
+    background-color: var(--white-primary);
+    border-radius: 5px;
+    width: 300px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 1rem 0;
+      color: var(--secondary-color);
+      cursor: pointer;
+    }
+
+    form#content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      div.input-field {
+        display: flex;
+
+        label {
+          display: none;
+        }
+
+        input {
+          border: 1px solid var(--white-secondary);
+          border-radius: 0.2rem;
+          padding: 0.8rem;
+          width: 250px;
+          outline: none;
+          color: var(--text-color);
+          margin-bottom: 1rem;
+          &:hover,
+          &:active,
+          &:focus {
+            border: 1px solid var(--primary-color);
+          }
+        }
+      }
+
+      .input-checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+
+        .check {
+          display: flex;
+
+          label {
+            display: none;
+          }
+
+          input[type='checkbox'] {
+            margin: auto;
+
+            &:active,
+            &:focus {
+              outline: none;
+            }
+          }
+
+          p {
+            font-size: 0.8rem;
+            color: var(--text-color);
+            margin-left: 5px;
+          }
+        }
+      }
+
+      input.loginBtn {
+        height: 30px;
+        width: 250px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin: 1rem 0;
+        background-color: var(--secondary-color);
+        color: white;
+        font-weight: 400;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: var(--primary-color);
+          outline: none;
+        }
+      }
+    }
+  }
+  // div.input-field.checkbox {
+  //   display: inline-block;
+
+  //   input {
+  //     width: 10px;
+  //   }
+  //   p {
+  //     font-size: 0.7rem;
+  //   }
+  // }
+}
+
+// CONTAINER DASHBOARD
+#container {
+  display: none;
   height: 99vh;
   flex-direction: column;
 
@@ -61,10 +179,11 @@
               cursor: pointer;
               color: var(--text-color);
 
-              &:hover {
+              &:hover,
+              &:active,
+              &:focus {
                 border-left: 3px solid var(--primary-color);
-                background-color: var(--hover-color);
-                color: var(--primary-color);
+                background-color: var(--white-secondary);
               }
 
               img {
@@ -76,10 +195,14 @@
         }
       }
 
-      .user-wrapper a {
+      .user-wrapper {
         display: flex;
         justify-content: center;
 
+        .logout {
+          display: flex;
+          cursor: pointer;
+        }
         img {
           width: 16px;
           margin: 0 0.2rem;
@@ -87,6 +210,10 @@
 
         p {
           color: var(--text-color);
+
+          &:hover {
+            color: var(--primary-color);
+          }
         }
       }
     }
@@ -147,19 +274,21 @@
             border-spacing: 0 0.5rem;
             color: var(--text-color);
 
-            thead th {
-              background-color: var(--white-secondary);
-              font-weight: normal;
-              padding: 1rem 1rem;
-              text-align: left;
-              font-weight: bold;
+            thead {
+              th {
+                background-color: var(--white-secondary);
+                font-weight: normal;
+                padding: 1rem 1rem;
+                text-align: left;
+                font-weight: bold;
 
-              &:first-child {
-                border-radius: 0.25rem 0 0 0.25rem;
-              }
+                &:first-child {
+                  border-radius: 0.25rem 0 0 0.25rem;
+                }
 
-              &:last-child {
-                border-radius: 0 0.25rem 0.25rem 0;
+                &:last-child {
+                  border-radius: 0 0.25rem 0.25rem 0;
+                }
               }
             }
 
@@ -169,7 +298,7 @@
 
                 &:hover {
                   opacity: 1;
-                  background-color: var(--primary-color);
+                  background-color: var(--white-secondary);
                 }
               }
 
@@ -187,9 +316,11 @@
               td.removeBtn {
                 display: flex;
                 justify-content: center;
+                align-items: center;
 
                 img {
-                  width: 30px;
+                  margin: 5px;
+                  width: 20px;
                   cursor: pointer;
                 }
               }

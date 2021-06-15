@@ -5,31 +5,138 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CRUD - Clients</title>
+  <title>Dashboard Client</title>
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles/css/main.css" />
+
+  <link rel="stylesheet" href="/assets/styles/css/dashboard.css" />
 </head>
 
 <body>
-  <div id="container">
+
+  <div id="login">
     <div id="login-form">
       <h1>LOGIN</h1>
       <form id="content">
         <div class="input-field">
           <label for="username">Usuario</label>
-          <input type="text" name="username" id="username" placeholder="Usuário" />
+          <input type="text" name="username" id="username" placeholder="Usuário" required />
         </div>
 
         <div class="input-field">
           <label for="password">Senha</label>
-          <input type="password" name="password" id="password" placeholder="Senha" />
+          <input type="password" name="password" id="password" placeholder="Senha" required />
         </div>
 
-        <a href="/dashboard.html"><input type="button" value="CONECTAR" /></a>
+        <div class="input-checkbox">
+          <div class="check">
+            <label for="remember">Lembrar login</label>
+            <input type="checkbox" name="remember" id="remember">
+            <p>Lembrar</p>
+          </div>
+        </div>
+
+        <input onClick="Login()" type="button" class="loginBtn" value="CONECTAR" />
       </form>
     </div>
   </div>
+
+  <div id="container">
+    <header class="navbar">
+      <h1>EvoBoard</h1>
+      <a href="#"><img src="./assets/img/user.svg" alt="User Image"></a>
+    </header>
+    <div class="content-box">
+      <div class="sidebar">
+        <div class="sidebar-menu">
+          <ul>
+            <li><a href="#"><img src="./assets/img/dashboard.png" alt="Icon Menu">Dashboard</a></li>
+            <li><a href="#"><img src="./assets/img/client.png" alt="Icon Menu">Clientes</a></li>
+            <li><a href="#"><img src="./assets/img/products.png" alt="Icon Menu">Produtos</a></li>
+            <li><a href="#"><img src="./assets/img/settings.png" alt="Icon Menu">Configurações</a></li>
+          </ul>
+        </div>
+        <div class="user-wrapper">
+          <div class="logout" onClick="Logout()">
+            <img src="./assets/img/turn-off.svg" alt="LogOut">
+            <p>Log Out</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <header>
+          <h3>Clientes</h3>
+          <div class="header-client">
+            <input type="search" name="" id="" placeholder="Procurar">
+            <a href="#" onClick="Modal()" class="button new">+ Cadastrar</a>
+          </div>
+        </header>
+        <main>
+          <section class="clients">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Empresa</th>
+                  <th>Telefone</th>
+                  <th>Cadastro</th>
+                  <th> </th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+      </section>
+    </div>
+    <div class="modal-overlay">
+      <div class="modal">
+        <div class="form">
+          <h2>Novo Cliente</h2>
+          <form action="" onSubmit="Form.submit(event)">
+
+            <div class="input-group">
+              <label class="sr-only" for="name">Nome</label>
+              <input type="text" id="name" name="name" placeholder="Nome" />
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Email" />
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="enterprise">Empresa</label>
+              <input type="text" id="enterprise" name="enterprise" placeholder="Empresa" />
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="phone">Telefone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(DDD)Telefone" />
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="date">Data</label>
+              <input type="date" id="date" name="date" />
+            </div>
+
+            <div class="input-group actions">
+              <a href="#" onClick="Modal()" class="button cancel">Cancelar</a>
+              <button>Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/login.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

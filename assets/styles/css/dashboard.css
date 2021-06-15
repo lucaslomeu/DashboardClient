@@ -1,6 +1,93 @@
 @import url("../css/reset.css");
-#container {
+#login {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: var(--white-secondary);
+}
+#login #login-form {
+  background-color: var(--white-primary);
+  border-radius: 5px;
+  width: 300px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#login #login-form h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+#login #login-form form#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#login #login-form form#content div.input-field {
+  display: flex;
+}
+#login #login-form form#content div.input-field label {
+  display: none;
+}
+#login #login-form form#content div.input-field input {
+  border: 1px solid var(--white-secondary);
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 250px;
+  outline: none;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+#login #login-form form#content div.input-field input:hover, #login #login-form form#content div.input-field input:active, #login #login-form form#content div.input-field input:focus {
+  border: 1px solid var(--primary-color);
+}
+#login #login-form form#content .input-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+#login #login-form form#content .input-checkbox .check {
+  display: flex;
+}
+#login #login-form form#content .input-checkbox .check label {
+  display: none;
+}
+#login #login-form form#content .input-checkbox .check input[type=checkbox] {
+  margin: auto;
+}
+#login #login-form form#content .input-checkbox .check input[type=checkbox]:active, #login #login-form form#content .input-checkbox .check input[type=checkbox]:focus {
+  outline: none;
+}
+#login #login-form form#content .input-checkbox .check p {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  margin-left: 5px;
+}
+#login #login-form form#content input.loginBtn {
+  height: 30px;
+  width: 250px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 1rem 0;
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: 400;
+}
+#login #login-form form#content input.loginBtn:hover, #login #login-form form#content input.loginBtn:active, #login #login-form form#content input.loginBtn:focus {
+  background-color: var(--primary-color);
+  outline: none;
+}
+
+#container {
+  display: none;
   height: 99vh;
   flex-direction: column;
 }
@@ -57,25 +144,31 @@
   cursor: pointer;
   color: var(--text-color);
 }
-#container .content-box .sidebar .sidebar-menu ul li a:hover {
+#container .content-box .sidebar .sidebar-menu ul li a:hover, #container .content-box .sidebar .sidebar-menu ul li a:active, #container .content-box .sidebar .sidebar-menu ul li a:focus {
   border-left: 3px solid var(--primary-color);
-  background-color: var(--hover-color);
-  color: var(--primary-color);
+  background-color: var(--white-secondary);
 }
 #container .content-box .sidebar .sidebar-menu ul li a img {
   width: 18px;
   margin: 0 0.7rem;
 }
-#container .content-box .sidebar .user-wrapper a {
+#container .content-box .sidebar .user-wrapper {
   display: flex;
   justify-content: center;
 }
-#container .content-box .sidebar .user-wrapper a img {
+#container .content-box .sidebar .user-wrapper .logout {
+  display: flex;
+  cursor: pointer;
+}
+#container .content-box .sidebar .user-wrapper img {
   width: 16px;
   margin: 0 0.2rem;
 }
-#container .content-box .sidebar .user-wrapper a p {
+#container .content-box .sidebar .user-wrapper p {
   color: var(--text-color);
+}
+#container .content-box .sidebar .user-wrapper p:hover {
+  color: var(--primary-color);
 }
 #container .content-box .content {
   padding: 0 20px;
@@ -143,7 +236,7 @@
 }
 #container .content-box .content main section.clients .data-table tbody tr:hover {
   opacity: 1;
-  background-color: var(--primary-color);
+  background-color: var(--white-secondary);
 }
 #container .content-box .content main section.clients .data-table tbody td {
   padding: 0.4rem 1rem;
@@ -157,9 +250,11 @@
 #container .content-box .content main section.clients .data-table tbody td.removeBtn {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 #container .content-box .content main section.clients .data-table tbody td.removeBtn img {
-  width: 30px;
+  margin: 5px;
+  width: 20px;
   cursor: pointer;
 }
 #container .modal-overlay {

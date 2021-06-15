@@ -29,25 +29,26 @@ const Client = {
 const DOM = {
   clientsContainer: document.querySelector('.data-table tbody'),
 
+  innerHTMLTransaction(client, index) {
+    const html = `
+        <td>${index + 1}</td>
+        <td class="name">${client.name}</td>
+        <td class="email">${client.email}</td>
+        <td class="enterprise">${client.enterprise}</td>
+        <td class="phone">${client.phone}</td>
+        <td class="date">${client.date}</td>
+        <td class="removeBtn">
+          <img onClick="Client.remove(${index})" src="./assets/img/remove.svg" alt="Remover cliente" />
+        </td>
+    `;
+    return html;
+  },
+
   addClients(client, index) {
     const tr = document.createElement('tr');
     tr.innerHTML = DOM.innerHTMLTransaction(client, index);
     tr.dataset.index = index;
     DOM.clientsContainer.appendChild(tr);
-  },
-
-  innerHTMLTransaction(client, index) {
-    const html = `
-    <td class="name">${client.name}</td>
-    <td class="email">${client.email}</td>
-    <td class="enterprise">${client.enterprise}</td>
-    <td class="phone">${client.phone}</td>
-    <td class="date">${client.date}</td>
-    <td class="removeBtn">
-      <img onClick="Client.remove(${index})" src="./assets/img/remove.svg" alt="Remover transação" />
-    </td>
-`;
-    return html;
   },
 
   clearClients() {
@@ -84,7 +85,6 @@ const Form = {
     ) {
       throw new Error('Por favor, preencha todos os campos');
     }
-    console.log('Validar');
   },
 
   formatFields() {
