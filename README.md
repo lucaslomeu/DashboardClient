@@ -1,8 +1,6 @@
 <h1 align="center"> EvoBoard </h1>
 
-<h3 align="center">
 [DashBoard](https://dashboardclient.netlify.app/)
-</h3>
 
 <h4 align="center">
 Usuário: admin
